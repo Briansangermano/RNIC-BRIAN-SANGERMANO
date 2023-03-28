@@ -9,6 +9,7 @@
 import React from 'react';
 import type {Node} from 'react';
 import {
+  Button,
   SafeAreaView,
   ScrollView,
   StatusBar,
@@ -55,6 +56,18 @@ const Section = ({children, title}): Node => {
 const App: () => Node = () => {
   const isDarkMode = useColorScheme() === 'dark';
 
+  const fetchApi = async () => {
+    try {
+      const response = await fetch(
+        'https://reactnative.dev/movies.json',
+      );
+      const json = await response.json();
+      console.log(json.movies);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   const backgroundStyle = {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
@@ -66,6 +79,7 @@ const App: () => Node = () => {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Button title="Fetch" onPress={fetchApi}/>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
