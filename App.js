@@ -20,7 +20,6 @@ import {
   Platform,
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
-import PlusIcon from './src/assets/icons/plus.svg'
 const Task1 = require('./src/assets/images/taskicon1.png');
 const Task2 = require('./src/assets/images/taskicon2.png');
 const Task3 = require('./src/assets/images/taskicon3.png');
@@ -57,6 +56,8 @@ const App = () => {
   const [cards, setCards] = useState(tasks);
   const [newTitle, setNewTitle] = useState<string | undefined>('');
   const [newDescription, setNewDescription] = useState<string | undefined>('');
+  const [isEditingMode, setIsEditingMode] = useState<Boolean>(false);
+  const [taskIdToEdit, setTaskIdToEdit] = useState<Number>(null);
 
   const appState = useRef(AppState.currentState);
 
@@ -84,21 +85,39 @@ const App = () => {
 
   const onPressButton = () => {
     if (newTitle && newDescription) {
-      const newCard = {
-        id: cards.length + 1,
-        title: newTitle,
-        description: newDescription,
-        status: false,
+      if (isEditingMode) {
+        cards.map(i => {
+          if (i.id === taskIdToEdit) {
+            i.title = newTitle;
+            i.description = newDescription;
+          };
+        })
+      } else {
+        const newCard = {
+          id: cards.length + 1,
+          title: newTitle,
+          description: newDescription,
+          status: false,
+        }
+        setCards([...cards, newCard]);
       }
-      setCards([...cards, newCard]);
       setNewTitle('');
       setNewDescription('');
+      setIsEditingMode(false);
+      setTaskIdToEdit(null);
     }
   }
 
   const deleteTask = (taskId) => {
     const deletedCard = cards.filter(i => i.id !== taskId)
     setCards(deletedCard)
+  }
+
+  const editCard = (id, title, description) => {
+    setTaskIdToEdit(id)
+    setIsEditingMode(true);
+    setNewTitle(title);
+    setNewDescription(description);
   }
 
   const renderEmptyComponent = () => (
@@ -115,7 +134,7 @@ const App = () => {
         </View>
         <FlatList
           data={cards}
-          renderItem={({item}) => <Card card={item} deleteTask={deleteTask} />}
+          renderItem={({item}) => <Card card={item} deleteTask={deleteTask} editCard={editCard} />}
           keyExtractor={(i, index) => index}
           ListEmptyComponent={renderEmptyComponent}
           style={styles.flatListContainer}
@@ -140,8 +159,7 @@ const App = () => {
             onSubmitEditing={Keyboard.dismiss}
           />
           <TouchableOpacity style={styles.button} onPress={onPressButton}>
-            <Text style={styles.buttonText}>Add Task</Text>
-            <PlusIcon width={20} height={20} stroke='#fff' />
+            <Text style={styles.buttonText}>{isEditingMode ? 'Edit Task' : 'Add Task'}</Text>
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

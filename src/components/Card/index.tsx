@@ -13,20 +13,18 @@ const TrashIcon = require('../../assets/icons/trash.svg').default;
 const EditIcon = require('../../assets/icons/edit.svg').default;
 const PersonImage = require('../../assets/images/person-icon.png');
 
-const Card = ({card, deleteTask}) => {
+const Card = ({card, deleteTask, editCard}) => {
 	const {id, title, description, status, uri} = card;
   const [isDone, setIsDone] = useState(status);
   const onPressButton = () => setIsDone(!isDone);
-  const [image, setImage] = useState<ImageSourcePropType>(uri || PersonImage)
 
   return (
     <View style={styles.container}>
         <TouchableOpacity style={styles.button} onPress={onPressButton}>
           <Image
             alt='Image'
-            source={image}
+            source={uri || PersonImage}
             style={styles.image}
-            onError={() => setImage(PersonImage)}
           />
           <View style={styles.textContainer}>
             <Text numberOfLines={1} style={styles.boldText}>{title}</Text>        
@@ -41,7 +39,7 @@ const Card = ({card, deleteTask}) => {
               )}
             </View>
             <View style={styles.actionButtons}>
-              <TouchableOpacity style={styles.action} onPress={() => console.log("EDIT")}>
+              <TouchableOpacity style={styles.action} onPress={() => editCard(id, title, description)}>
                 <EditIcon stroke='#fff'/>
               </TouchableOpacity>
               <TouchableOpacity style={styles.action} onPress={() => deleteTask(id)}>
