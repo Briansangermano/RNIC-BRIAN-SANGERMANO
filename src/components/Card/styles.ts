@@ -10,11 +10,18 @@ const styles = StyleSheet.create({
 	button: {
 		borderRadius: 8,
 		padding: 12,
-		backgroundColor: Platform.OS === 'ios' ? 'skyblue' : '#006a9c',
+		backgroundColor: '#003f69',
 	},
 	boldText: {
 		fontWeight: 'bold',
+		fontSize: 19,
+		color: 'white',
+		fontFamily: 'Lato-Black',
+	},
+	text: {
 		fontSize: 16,
+		color: 'white',
+		fontFamily: 'Lato-Italic',
 	},
 	textContainer: {
 		flex: 1,

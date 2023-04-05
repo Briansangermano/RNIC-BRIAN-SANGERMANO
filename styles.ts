@@ -1,9 +1,9 @@
-import { StyleSheet, Platform } from 'react-native';
+import { StyleSheet } from 'react-native';
 
 const styles = StyleSheet.create({
     safeArea: {
       flex: 1,
-      backgroundColor: Platform.OS === 'ios' ? 'steelblue' : '#209cd8',
+      backgroundColor: '#106b87',
     },
     container: {
       flex: 1,
@@ -25,21 +25,24 @@ const styles = StyleSheet.create({
       marginTop: 15,
     },
     headerContainer: {
-      padding: 10,
+      paddingTop: 10,
+      paddingLeft: 15,
     },
     headerText: {
-      fontSize: 30,
+      fontSize: 40,
       fontWeight: 'bold',
       color: 'white',
+      fontFamily: 'Alkatra',
     },
     input: {
       height: 40,
       margin: 8,
       borderWidth: 1,
       borderRadius: 10,
-      borderColor: Platform.OS === 'ios' ? 'skyblue' : '#006a9c',
+      borderColor: '#003f69',
       padding: 10,
       width: 300,
+      backgroundColor: '#003f69',
       color: '#fff',
     },
     button: {
@@ -47,8 +50,8 @@ const styles = StyleSheet.create({
       borderRadius: 10,
       width: 100,
       alignItems: 'center',
-      borderColor: Platform.OS === 'ios' ? 'skyblue' : '#006a9c',
-      backgroundColor: Platform.OS === 'ios' ? 'skyblue' : '#006a9c',
+      borderColor: '#003f69',
+      backgroundColor: '#003f69',
       margin: 10,
       padding: 10,
     },
