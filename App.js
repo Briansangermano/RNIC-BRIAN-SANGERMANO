@@ -19,6 +19,7 @@ import {
   Keyboard,
   Platform,
 } from 'react-native';
+import RNBootSplash from "react-native-bootsplash";
 
 import Card from './src/components/Card';
 import styles from './styles';
@@ -47,6 +48,10 @@ const App = () => {
   const [newDescription, setNewDescription] = useState<string | undefined>('');
 
   const appState = useRef(AppState.currentState);
+
+  useEffect(() => {
+    RNBootSplash.hide({ fade: true, duration: 500 });
+  }, []);
 
   useEffect(() => {
     const subscription = AppState.addEventListener('change', nextAppState => {
