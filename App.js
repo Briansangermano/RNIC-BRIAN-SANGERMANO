@@ -19,7 +19,12 @@ import {
   Keyboard,
   Platform,
 } from 'react-native';
-import RNBootSplash from "react-native-bootsplash";
+import RNBootSplash from 'react-native-bootsplash';
+import PlusIcon from './src/assets/icons/plus.svg'
+const Task1 = require('./src/assets/images/taskicon1.png');
+const Task2 = require('./src/assets/images/taskicon2.png');
+const Task3 = require('./src/assets/images/taskicon3.png');
+
 
 import Card from './src/components/Card';
 import styles from './styles';
@@ -28,19 +33,25 @@ const App = () => {
   const lastNameRef = useRef();
   const tasks = [
     {
+      id: 1,
       title: 'First Item',
-      description: 'Description data to show',
+      description: 'Description data to show description data to show',
       status: false,
+      uri: Task1
     },
     {
+      id: 2,
       title: 'Second Item',
       description: 'Description data to show',
       status: false,
+      uri: Task2
     },
     {
+      id: 3,
       title: 'Third Item',
       description: 'Description data to show',
       status: false,
+      uri: Task3
     },
   ];
   const [cards, setCards] = useState(tasks);
@@ -71,10 +82,10 @@ const App = () => {
     };
   }, []);
 
-
   const onPressButton = () => {
     if (newTitle && newDescription) {
       const newCard = {
+        id: cards.length + 1,
         title: newTitle,
         description: newDescription,
         status: false,
@@ -83,6 +94,11 @@ const App = () => {
       setNewTitle('');
       setNewDescription('');
     }
+  }
+
+  const deleteTask = (taskId) => {
+    const deletedCard = cards.filter(i => i.id !== taskId)
+    setCards(deletedCard)
   }
 
   const renderEmptyComponent = () => (
@@ -99,7 +115,7 @@ const App = () => {
         </View>
         <FlatList
           data={cards}
-          renderItem={({item}) => <Card card={item} />}
+          renderItem={({item}) => <Card card={item} deleteTask={deleteTask} />}
           keyExtractor={(i, index) => index}
           ListEmptyComponent={renderEmptyComponent}
           style={styles.flatListContainer}
@@ -125,6 +141,7 @@ const App = () => {
           />
           <TouchableOpacity style={styles.button} onPress={onPressButton}>
             <Text style={styles.buttonText}>Add Task</Text>
+            <PlusIcon width={20} height={20} stroke='#fff' />
           </TouchableOpacity>
         </View>
       </KeyboardAvoidingView>

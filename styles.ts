@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
     },
     inputContainer: {
       alignItems: 'center',
-      marginTop: 15,
+      paddingTop: 25,
+      borderTopWidth: 1,
+      borderTopColor: '#003f69',
     },
     headerContainer: {
       paddingTop: 10,
@@ -48,16 +50,18 @@ const styles = StyleSheet.create({
     button: {
       borderWidth: 1,
       borderRadius: 10,
-      width: 100,
       alignItems: 'center',
       borderColor: '#003f69',
       backgroundColor: '#003f69',
       margin: 10,
       padding: 10,
+      flexDirection: 'row',
     },
     buttonText: {
       color: 'white',
       fontWeight: '700',
+      paddingRight: 5,
+      paddingLeft: 5
     }
 });
 

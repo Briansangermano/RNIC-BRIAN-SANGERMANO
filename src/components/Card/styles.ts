@@ -11,6 +11,7 @@ const styles = StyleSheet.create({
 		borderRadius: 8,
 		padding: 12,
 		backgroundColor: '#003f69',
+		flexDirection: 'row',
 	},
 	boldText: {
 		fontWeight: 'bold',
@@ -24,24 +25,24 @@ const styles = StyleSheet.create({
 		fontFamily: 'Lato-Italic',
 	},
 	textContainer: {
-		flex: 1,
-		flexDirection: 'row',
-		paddingBottom: 5,
-		alignItems: 'flex-end',
+		width: 200
 	},
 	statusText: {
 		flex: 1,
 		alignItems: 'flex-end',
 		marginTop: 6,
 	},
-	textDone: {
-		fontWeight: '700',
-		color: 'green',
+	image: {
+		width: 80,
+		height: 80,
+		marginRight: 10
 	},
-	textNotDone: {
-		fontWeight: '700',
-		color: '#b73138',
-	}
+	actionButtons: {
+		flexDirection: 'row',
+	},
+	action: {
+		marginLeft: 5,
+	},
 });
 
 export default styles;
