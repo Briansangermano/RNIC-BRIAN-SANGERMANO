@@ -1,12 +1,17 @@
 import React, {useState} from 'react';
+import { View } from 'react-native';
 import {
-	Text,
-	TouchableOpacity,
-	View,
+  Wrapper,
+  Button,
+  BoldText,
+  SimpleText,
+  TextContainer,
+  StatusView,
   Image,
-  ImageSourcePropType,
-} from 'react-native';
-import styles from './styles';
+  ActionButtonsContainer,
+  ActionButton,
+} from './styles';
+import { useTheme } from 'styled-components'
 const SquareIcon = require('../../assets/icons/square.svg').default;
 const CheckSquareIcon = require('../../assets/icons/check-square.svg').default;
 const TrashIcon = require('../../assets/icons/trash.svg').default;
@@ -14,41 +19,38 @@ const EditIcon = require('../../assets/icons/edit.svg').default;
 const PersonImage = require('../../assets/images/person-icon.png');
 
 const Card = ({card, deleteTask, editCard}) => {
+  const theme = useTheme()
 	const {id, title, description, status, uri} = card;
   const [isDone, setIsDone] = useState(status);
   const onPressButton = () => setIsDone(!isDone);
 
   return (
-    <View style={styles.container}>
-        <TouchableOpacity style={styles.button} onPress={onPressButton}>
-          <Image
-            alt='Image'
-            source={uri || PersonImage}
-            style={styles.image}
-          />
-          <View style={styles.textContainer}>
-            <Text numberOfLines={1} style={styles.boldText}>{title}</Text>        
-            <Text numberOfLines={3} style={styles.text}>{description}</Text>
-          </View>
+    <Wrapper>
+        <Button onPress={onPressButton}>
+          <Image source={uri || PersonImage}/>
+          <TextContainer>
+            <BoldText numberOfLines={1}>{title}</BoldText>        
+            <SimpleText numberOfLines={3}>{description}</SimpleText>
+          </TextContainer>
           <View>
-            <View style={styles.statusText}>
+            <StatusView>
               {isDone ? (
-                <CheckSquareIcon stroke='green' />
+                <CheckSquareIcon stroke={theme.colors.green} />
               ) : (
-                <SquareIcon stroke='#b73138' />
+                <SquareIcon stroke={theme.colors.red} />
               )}
-            </View>
-            <View style={styles.actionButtons}>
-              <TouchableOpacity style={styles.action} onPress={() => editCard(id, title, description)}>
-                <EditIcon stroke='#fff'/>
-              </TouchableOpacity>
-              <TouchableOpacity style={styles.action} onPress={() => deleteTask(id)}>
-                <TrashIcon stroke='#fff'/>
-              </TouchableOpacity>
-            </View>
+            </StatusView>
+            <ActionButtonsContainer>
+              <ActionButton onPress={() => editCard(id, title, description)}>
+                <EditIcon stroke={theme.colors.white}/>
+              </ActionButton>
+              <ActionButton onPress={() => deleteTask(id)}>
+                <TrashIcon stroke={theme.colors.white}/>
+              </ActionButton>
+            </ActionButtonsContainer>
           </View>
-        </TouchableOpacity>
-    </View>
+        </Button>
+    </Wrapper>
   );
 };
 

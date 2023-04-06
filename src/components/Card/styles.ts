@@ -1,48 +1,52 @@
-import { StyleSheet, Platform } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-	container: {
-		flex: 1,
-		justifyContent: 'center',
-		paddingHorizontal: 10,
-		marginBottom: 20,
-	},
-	button: {
-		borderRadius: 8,
-		padding: 12,
-		backgroundColor: '#003f69',
-		flexDirection: 'row',
-	},
-	boldText: {
-		fontWeight: 'bold',
-		fontSize: 19,
-		color: 'white',
-		fontFamily: 'Lato-Black',
-	},
-	text: {
-		fontSize: 16,
-		color: 'white',
-		fontFamily: 'Lato-Italic',
-	},
-	textContainer: {
-		width: 200
-	},
-	statusText: {
-		flex: 1,
-		alignItems: 'flex-end',
-		marginTop: 6,
-	},
-	image: {
-		width: 80,
-		height: 80,
-		marginRight: 10
-	},
-	actionButtons: {
-		flexDirection: 'row',
-	},
-	action: {
-		marginLeft: 5,
-	},
-});
+export const Wrapper = styled.View`
+    flex: 1;
+    justify-content: center;
+	padding: 0 10px;
+	margin-bottom: 20px;
+`;
 
-export default styles;
+export const Button = styled.TouchableOpacity`
+    border-radius: 8px;
+	padding: 12px;
+	background-color: ${({theme}) => theme.colors.darkBlue};
+	flex-direction: row;
+`;
+
+export const BoldText = styled.Text`
+    font-weight: bold;
+	font-size: 19px;
+	color: white;
+	font-family: 'Lato-Black';
+`;
+
+export const SimpleText = styled.Text`
+    font-size: 16px;
+	color: white;
+	font-family: 'Lato-Italic';
+`;
+
+export const TextContainer = styled.View`
+    width: 200px;
+`;
+
+export const StatusView = styled.View`
+    flex: 1;
+	align-items: flex-end;
+	margin-top: 6px;
+`;
+
+export const Image = styled.Image`
+   width: 80px;
+   height: 80px;
+   margin-right: 10px;
+`;
+
+export const ActionButtonsContainer = styled.View`
+   flex-direction: row;
+`;
+
+export const ActionButton = styled.TouchableOpacity`
+   margin-left: 5px;
+`;

@@ -1,68 +1,74 @@
-import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
-const styles = StyleSheet.create({
-    safeArea: {
-      flex: 1,
-      backgroundColor: '#106b87',
-    },
-    container: {
-      flex: 1,
-    },
-    flatListContainer: {
-      flex: 1,
-      width: '100%',
-    },
-    viewContainer: {
-      alignItems: 'center',
-      paddingTop: 200
-    },
-    emptyText: {
-      fontSize: 25,
-      color: 'white',
-    },
-    inputContainer: {
-      alignItems: 'center',
-      paddingTop: 25,
-      borderTopWidth: 1,
-      borderTopColor: '#003f69',
-    },
-    headerContainer: {
-      paddingTop: 10,
-      paddingLeft: 15,
-    },
-    headerText: {
-      fontSize: 40,
-      fontWeight: 'bold',
-      color: 'white',
-      fontFamily: 'Alkatra',
-    },
-    input: {
-      height: 40,
-      margin: 8,
-      borderWidth: 1,
-      borderRadius: 10,
-      borderColor: '#003f69',
-      padding: 10,
-      width: 300,
-      backgroundColor: '#003f69',
-      color: '#fff',
-    },
-    button: {
-      borderWidth: 1,
-      borderRadius: 10,
-      alignItems: 'center',
-      borderColor: '#003f69',
-      backgroundColor: '#003f69',
-      margin: 10,
-      padding: 10,
-      flexDirection: 'row',
-    },
-    buttonText: {
-      color: 'white',
-      fontWeight: '700',
-      paddingRight: 5,
-      paddingLeft: 5
-    }
-});
+export const Wrapper = styled.SafeAreaView`
+    flex: 1;
+    background-color: ${({theme}) => theme.colors.lightBlue};
+`;
 
-export default styles;
+export const KeyboardAvoiding = styled.KeyboardAvoidingView`
+    flex: 1;
+`;
+
+export const ContainerListCard = styled.FlatList`
+    flex: 1;
+    width: 100%;
+`;
+
+export const ViewContainer = styled.View`
+    align-items: center;
+    padding-top: 200px;
+`;
+
+export const EmptyText = styled.View`
+    font-size: 25px;
+    color: white;
+`;
+
+export const InputContainer = styled.View`
+    align-items: center;
+    padding-top: 25px;
+    border-top-width: 1px;
+    border-top-color: ${({theme}) => theme.colors.darkBlue};
+`;
+
+export const HeaderContainer = styled.View`
+    padding-top: 10px;
+    padding-left: 15px;
+`;
+
+export const HeaderText = styled.Text`
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+    font-family: 'Alkatra';
+`;
+
+export const Input = styled.TextInput`
+    height: 40px;
+    margin: 8px;
+    border-width: 1px;
+    border-radius: 10px;
+    border-color: ${({theme}) => theme.colors.darkBlue};
+    padding: 10px;
+    width: 300px;
+    background-color: ${({theme}) => theme.colors.darkBlue};
+    color: white;
+`;
+
+export const Button = styled.TouchableOpacity`
+    border-width: 1px;
+    border-radius: 10px;
+    align-items: center;
+    border-color: ${({theme}) => theme.colors.darkBlue};
+    background-color: ${({theme}) => theme.colors.darkBlue};
+    margin: 10px;
+    padding: 10px;
+    flex-direction: row;
+`;
+
+export const ButtonText = styled.Text`
+    color: white;
+    font-weight: 700;
+    padding-right: 5px;
+    padding-left: 5px;
+`;

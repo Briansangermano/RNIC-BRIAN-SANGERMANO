@@ -8,25 +8,29 @@
 
 import React, { useEffect, useRef, useState } from 'react';
 import {
-  SafeAreaView,
-  Text,
-  FlatList,
-  View,
-  TextInput,
-  KeyboardAvoidingView,
-  TouchableOpacity,
   AppState,
   Keyboard,
   Platform,
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
+import {
+  Wrapper,
+  KeyboardAvoiding,
+  ContainerListCard,
+  EmptyText,
+  InputContainer,
+  HeaderContainer,
+  HeaderText,
+  Input,
+  Button,
+  ButtonText,
+} from './styles';
+import Card from './src/components/Card';
+import { ThemeProvider } from 'styled-components';
+import { myTheme } from './src/constants/theme'
 const Task1 = require('./src/assets/images/taskicon1.png');
 const Task2 = require('./src/assets/images/taskicon2.png');
 const Task3 = require('./src/assets/images/taskicon3.png');
-
-
-import Card from './src/components/Card';
-import styles from './styles';
 
 const App = () => {
   const lastNameRef = useRef();
@@ -121,49 +125,48 @@ const App = () => {
   }
 
   const renderEmptyComponent = () => (
-    <View style={styles.viewContainer}>
-      <Text style={styles.emptyText}>Empty List...</Text>
-    </View>
+    <ViewContainer>
+      <EmptyText>Empty List...</EmptyText>
+    </ViewContainer>
   );
 
   return (
-    <SafeAreaView style={styles.safeArea}>
-      <KeyboardAvoidingView behavior={Platform.OS  === 'ios' ? 'padding' : 'undefined'} style={styles.container}>
-        <View style={styles.headerContainer}>
-          <Text style={styles.headerText}>Tasks</Text>
-        </View>
-        <FlatList
-          data={cards}
-          renderItem={({item}) => <Card card={item} deleteTask={deleteTask} editCard={editCard} />}
-          keyExtractor={(i, index) => index}
-          ListEmptyComponent={renderEmptyComponent}
-          style={styles.flatListContainer}
-        />
-        <View style={styles.inputContainer}>
-          <TextInput
-            style={styles.input}
-            value={newTitle}
-            placeholder="Title"
-            returnKeyType="next"
-            placeholderTextColor='#e2e2e2'
-            onSubmitEditing={() => lastNameRef.current.focus()}
-            onChangeText={(value) => setNewTitle(value)}
+    <ThemeProvider theme={myTheme}>
+      <Wrapper>
+        <KeyboardAvoiding behavior={Platform.OS  === 'ios' ? 'padding' : 'undefined'}>
+          <HeaderContainer>
+            <HeaderText>Tasks</HeaderText>
+          </HeaderContainer>
+          <ContainerListCard
+            data={cards}
+            renderItem={({item}) => <Card card={item} deleteTask={deleteTask} editCard={editCard} />}
+            keyExtractor={(i, index) => index}
+            ListEmptyComponent={renderEmptyComponent}
           />
-          <TextInput
-            style={styles.input}
-            placeholder="Description"
-            value={newDescription}
-            ref={lastNameRef}
-            placeholderTextColor='#e2e2e2'
-            onChangeText={(value) => setNewDescription(value)}
-            onSubmitEditing={Keyboard.dismiss}
-          />
-          <TouchableOpacity style={styles.button} onPress={onPressButton}>
-            <Text style={styles.buttonText}>{isEditingMode ? 'Edit Task' : 'Add Task'}</Text>
-          </TouchableOpacity>
-        </View>
-      </KeyboardAvoidingView>
-    </SafeAreaView>
+          <InputContainer>
+            <Input
+              value={newTitle}
+              placeholder="Title"
+              returnKeyType="next"
+              placeholderTextColor={myTheme.colors.grey}
+              onSubmitEditing={() => lastNameRef.current.focus()}
+              onChangeText={(value) => setNewTitle(value)}
+            />
+            <Input
+              placeholder="Description"
+              value={newDescription}
+              ref={lastNameRef}
+              placeholderTextColor={myTheme.colors.grey}
+              onChangeText={(value) => setNewDescription(value)}
+              onSubmitEditing={Keyboard.dismiss}
+            />
+            <Button onPress={onPressButton}>
+              <ButtonText>{isEditingMode ? 'Edit Task' : 'Add Task'}</ButtonText>
+            </Button>
+          </InputContainer>
+        </KeyboardAvoiding>
+      </Wrapper>
+    </ThemeProvider>
   );
 };
 
