@@ -1,23 +1,14 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- *
- * @format
- * @flow strict-local
- */
-
 import React, { useEffect, useRef, useState } from 'react';
 import {
   AppState,
   Keyboard,
   Platform,
+  TextInput,
 } from 'react-native';
 import RNBootSplash from 'react-native-bootsplash';
 import {
   Wrapper,
   KeyboardAvoiding,
-  ContainerListCard,
-  EmptyText,
   InputContainer,
   HeaderContainer,
   HeaderText,
@@ -25,15 +16,14 @@ import {
   Button,
   ButtonText,
 } from './styles';
-import Card from './src/components/Card';
 import { ThemeProvider } from 'styled-components';
-import { myTheme } from './src/constants/theme'
-const Task1 = require('./src/assets/images/taskicon1.png');
-const Task2 = require('./src/assets/images/taskicon2.png');
-const Task3 = require('./src/assets/images/taskicon3.png');
+import { myTheme } from '../../constants/theme'
+const Task1 = require('../../assets/images/taskicon1.png');
+const Task2 = require('../../assets/images/taskicon2.png');
+const Task3 = require('../../assets/images/taskicon3.png');
 
-const App = () => {
-  const lastNameRef = useRef();
+const List = () => {
+  const titleRef = useRef<TextInput | null>(null)
   const tasks = [
     {
       id: 1,
@@ -61,13 +51,9 @@ const App = () => {
   const [newTitle, setNewTitle] = useState<string | undefined>('');
   const [newDescription, setNewDescription] = useState<string | undefined>('');
   const [isEditingMode, setIsEditingMode] = useState<Boolean>(false);
-  const [taskIdToEdit, setTaskIdToEdit] = useState<Number>(null);
+  const [taskIdToEdit, setTaskIdToEdit] = useState<Number | null>(null);
 
   const appState = useRef(AppState.currentState);
-
-  useEffect(() => {
-    RNBootSplash.hide({ fade: true, duration: 500 });
-  }, []);
 
   useEffect(() => {
     const subscription = AppState.addEventListener('change', nextAppState => {
@@ -78,8 +64,8 @@ const App = () => {
   }, []);
 
   useEffect(() => {
-    const showSubscription = Keyboard.addListener('keyboardDidShow');
-    const hideSubscription = Keyboard.addListener('keyboardDidHide');
+    const showSubscription = Keyboard.addListener('keyboardDidShow', () => {});
+    const hideSubscription = Keyboard.addListener('keyboardDidHide', () => {});
 
     return () => {
       showSubscription.remove();
@@ -102,6 +88,7 @@ const App = () => {
           title: newTitle,
           description: newDescription,
           status: false,
+          uri: null
         }
         setCards([...cards, newCard]);
       }
@@ -112,50 +99,26 @@ const App = () => {
     }
   }
 
-  const deleteTask = (taskId) => {
-    const deletedCard = cards.filter(i => i.id !== taskId)
-    setCards(deletedCard)
-  }
-
-  const editCard = (id, title, description) => {
-    setTaskIdToEdit(id)
-    setIsEditingMode(true);
-    setNewTitle(title);
-    setNewDescription(description);
-  }
-
-  const renderEmptyComponent = () => (
-    <ViewContainer>
-      <EmptyText>Empty List...</EmptyText>
-    </ViewContainer>
-  );
-
   return (
     <ThemeProvider theme={myTheme}>
       <Wrapper>
         <KeyboardAvoiding behavior={Platform.OS  === 'ios' ? 'padding' : 'undefined'}>
           <HeaderContainer>
-            <HeaderText>Tasks</HeaderText>
+            <HeaderText>Add Task</HeaderText>
           </HeaderContainer>
-          <ContainerListCard
-            data={cards}
-            renderItem={({item}) => <Card card={item} deleteTask={deleteTask} editCard={editCard} />}
-            keyExtractor={(i, index) => index}
-            ListEmptyComponent={renderEmptyComponent}
-          />
           <InputContainer>
             <Input
               value={newTitle}
               placeholder="Title"
               returnKeyType="next"
               placeholderTextColor={myTheme.colors.grey}
-              onSubmitEditing={() => lastNameRef.current.focus()}
+              onSubmitEditing={() => titleRef?.current?.focus()}
               onChangeText={(value) => setNewTitle(value)}
             />
             <Input
               placeholder="Description"
               value={newDescription}
-              ref={lastNameRef}
+              ref={titleRef}
               placeholderTextColor={myTheme.colors.grey}
               onChangeText={(value) => setNewDescription(value)}
               onSubmitEditing={Keyboard.dismiss}
@@ -170,4 +133,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default List;

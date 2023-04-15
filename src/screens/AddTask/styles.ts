@@ -9,26 +9,11 @@ export const KeyboardAvoiding = styled.KeyboardAvoidingView`
     flex: 1;
 `;
 
-export const ContainerListCard = styled.FlatList`
-    flex: 1;
-    width: 100%;
-`;
-
-export const ViewContainer = styled.View`
-    align-items: center;
-    padding-top: 200px;
-`;
-
-export const EmptyText = styled.View`
-    font-size: 25px;
-    color: white;
-`;
-
 export const InputContainer = styled.View`
+    flex: 1;
     align-items: center;
+    justify-content: center;
     padding-top: 25px;
-    border-top-width: 1px;
-    border-top-color: ${({theme}) => theme.colors.darkBlue};
 `;
 
 export const HeaderContainer = styled.View`
