@@ -1,9 +1,7 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React from 'react';
+import { connect } from 'react-redux';
 import {
-  AppState,
-  Keyboard,
   Platform,
-  TextInput,
 } from 'react-native';
 import {
   Wrapper,
@@ -17,45 +15,8 @@ import {
 import Card from '../../components/Card';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../constants/theme'
-const Task1 = require('../../assets/images/taskicon1.png');
-const Task2 = require('../../assets/images/taskicon2.png');
-const Task3 = require('../../assets/images/taskicon3.png');
 
-const List = ({ navigation }) => {
-  const tasks = [
-    {
-      id: 1,
-      title: 'First Item',
-      description: 'Description data to show description data to show',
-      status: false,
-      uri: Task1
-    },
-    {
-      id: 2,
-      title: 'Second Item',
-      description: 'Description data to show',
-      status: false,
-      uri: Task2
-    },
-    {
-      id: 3,
-      title: 'Third Item',
-      description: 'Description data to show',
-      status: false,
-      uri: Task3
-    },
-  ];
-  const [cards, setCards] = useState(tasks);
-  const appState = useRef(AppState.currentState);
-
-  useEffect(() => {
-    const subscription = AppState.addEventListener('change', nextAppState => {
-      appState.current = nextAppState;
-      if (appState.current === 'background') setCards(tasks)
-    });
-    return () => subscription.remove();
-  }, []);
-
+const List = ({ navigation, tasks }) => {
   const renderEmptyComponent = () => (
     <ViewContainer>
       <EmptyText>Empty List...</EmptyText>
@@ -70,7 +31,7 @@ const List = ({ navigation }) => {
             <HeaderText>Tasks</HeaderText>
           </HeaderContainer>
           <ContainerListCard
-            data={cards}
+            data={tasks}
             renderItem={({item}) => <Card card={item} navigation={navigation} />}
             keyExtractor={(i, index) => index.toString()}
             ListEmptyComponent={renderEmptyComponent}
@@ -81,4 +42,9 @@ const List = ({ navigation }) => {
   );
 };
 
-export default List;
+const mapStateToProps = (state) => {
+  const { tasks } = state.task
+  return { tasks }
+};
+
+export default connect(mapStateToProps)(List);

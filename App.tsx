@@ -17,9 +17,14 @@ import List from './src/screens/List';
 import AddTask from './src/screens/AddTask';
 import EditTask from './src/screens/EditTask';
 import { TabParamsList } from './src/types/interfaces/navigation';
+import { Provider } from 'react-redux';
+import { createStore } from 'redux';
 import { Routes } from './src/types/enums/routes';
+import Reducer from './src/redux/reducer'
 const ListIcon = require('./src/assets/icons/list.svg').default;
 const PlusIcon = require('./src/assets/icons/plus.svg').default;
+
+const store = createStore(Reducer);
 
 const App = () => {
   const Tab = createBottomTabNavigator<TabParamsList>();
@@ -39,22 +44,24 @@ const App = () => {
   }
 
   return (
-    <ThemeProvider theme={myTheme}>
-      <NavigationContainer>
-      <Tab.Navigator screenOptions={{ headerShown: false }}>
-        <Tab.Screen
-          name={Routes.List}
-          component={ListStackScreen}
-          options={{ tabBarIcon: ({ focused }) => <ListIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
-        />
-        <Tab.Screen
-          name={Routes.AddTask}
-          component={AddTask}
-          options={{ tabBarIcon: ({ focused }) => <PlusIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
-        />
-      </Tab.Navigator>
-      </NavigationContainer>
-    </ThemeProvider>
+    <Provider store={store}>
+      <ThemeProvider theme={myTheme}>
+        <NavigationContainer>
+        <Tab.Navigator screenOptions={{ headerShown: false }}>
+          <Tab.Screen
+            name={Routes.List}
+            component={ListStackScreen}
+            options={{ tabBarIcon: ({ focused }) => <ListIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
+          />
+          <Tab.Screen
+            name={Routes.AddTask}
+            component={AddTask}
+            options={{ tabBarIcon: ({ focused }) => <PlusIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
+          />
+        </Tab.Navigator>
+        </NavigationContainer>
+      </ThemeProvider>
+    </Provider>
   );
 };
 

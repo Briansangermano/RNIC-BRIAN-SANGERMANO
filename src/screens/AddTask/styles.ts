@@ -29,13 +29,13 @@ export const HeaderText = styled.Text`
 `;
 
 export const Input = styled.TextInput`
-    height: 40px;
-    margin: 8px;
+    height: 60px;
+    margin: 20px;
     border-width: 1px;
     border-radius: 10px;
     border-color: ${({theme}) => theme.colors.darkBlue};
-    padding: 10px;
-    width: 300px;
+    padding: 20px;
+    width: 320px;
     background-color: ${({theme}) => theme.colors.darkBlue};
     color: white;
 `;

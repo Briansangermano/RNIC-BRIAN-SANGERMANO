@@ -1,5 +1,5 @@
 import React, {useState} from 'react';
-import { View } from 'react-native';
+import { useDispatch } from 'react-redux';
 import {
   Wrapper,
   Button,
@@ -9,16 +9,22 @@ import {
   StatusView,
   Image,
 } from './styles';
+import { selectTask } from '../../redux/actions';
 import { useTheme } from 'styled-components'
 const SquareIcon = require('../../assets/icons/square.svg').default;
 const CheckSquareIcon = require('../../assets/icons/check-square.svg').default;
 const PersonImage = require('../../assets/images/person-icon.png');
 
 const Card = ({card, navigation}) => {
+  const dispatch = useDispatch();
   const theme = useTheme()
 	const {id, title, description, status, uri} = card;
   const [isDone, setIsDone] = useState(status);
-  const onPressButton = () => navigation.navigate('EditTask');
+  
+  const onPressButton = () => {
+    dispatch(selectTask(id));
+    navigation.navigate('EditTask')
+  };
 
   return (
     <Wrapper>

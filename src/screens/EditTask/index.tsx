@@ -1,11 +1,10 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { connect, useDispatch } from 'react-redux';
 import {
-  AppState,
   Keyboard,
   Platform,
   TextInput,
 } from 'react-native';
-import RNBootSplash from 'react-native-bootsplash';
 import {
   Wrapper,
   KeyboardAvoiding,
@@ -16,52 +15,16 @@ import {
   Button,
   ButtonText,
 } from './styles';
+import { removeTask, editTask } from '../../redux/actions';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../constants/theme'
-const Task1 = require('../../assets/images/taskicon1.png');
-const Task2 = require('../../assets/images/taskicon2.png');
-const Task3 = require('../../assets/images/taskicon3.png');
 
-const List = () => {
-  const titleRef = useRef<TextInput | null>(null)
-  const tasks = [
-    {
-      id: 1,
-      title: 'First Item',
-      description: 'Description data to show description data to show',
-      status: false,
-      uri: Task1
-    },
-    {
-      id: 2,
-      title: 'Second Item',
-      description: 'Description data to show',
-      status: false,
-      uri: Task2
-    },
-    {
-      id: 3,
-      title: 'Third Item',
-      description: 'Description data to show',
-      status: false,
-      uri: Task3
-    },
-  ];
-  const [cards, setCards] = useState(tasks);
-  const [newTitle, setNewTitle] = useState<string | undefined>('');
-  const [newDescription, setNewDescription] = useState<string | undefined>('');
-  const [isEditingMode, setIsEditingMode] = useState<Boolean>(false);
-  const [taskIdToEdit, setTaskIdToEdit] = useState<Number | null>(null);
+const EditTask = ({ selectedTask, navigation }) => {
+  const titleRef = useRef<TextInput | null>(null);
+  const dispatch = useDispatch();
 
-  const appState = useRef(AppState.currentState);
-
-  useEffect(() => {
-    const subscription = AppState.addEventListener('change', nextAppState => {
-      appState.current = nextAppState;
-      if (appState.current === 'background') setCards(tasks)
-    });
-    return () => subscription.remove();
-  }, []);
+  const [newTitle, setNewTitle] = useState<string | undefined>(selectedTask?.title);
+  const [newDescription, setNewDescription] = useState<string | undefined>(selectedTask?.description);
 
   useEffect(() => {
     const showSubscription = Keyboard.addListener('keyboardDidShow', () => {});
@@ -73,30 +36,18 @@ const List = () => {
     };
   }, []);
 
-  const onPressButton = () => {
+  const editTaskButton = () => {
     if (newTitle && newDescription) {
-      if (isEditingMode) {
-        cards.map(i => {
-          if (i.id === taskIdToEdit) {
-            i.title = newTitle;
-            i.description = newDescription;
-          };
-        })
-      } else {
-        const newCard = {
-          id: cards.length + 1,
-          title: newTitle,
-          description: newDescription,
-          status: false,
-          uri: null
-        }
-        setCards([...cards, newCard]);
-      }
+      dispatch(editTask({id: selectedTask.id, title: newTitle, description: newDescription}));
       setNewTitle('');
       setNewDescription('');
-      setIsEditingMode(false);
-      setTaskIdToEdit(null);
+      navigation.canGoBack() && navigation.goBack();
     }
+  }
+
+  const removeTaskButton = () => {
+    dispatch(removeTask(selectedTask.id));
+    navigation.canGoBack() && navigation.goBack();
   }
 
   return (
@@ -123,8 +74,11 @@ const List = () => {
               onChangeText={(value) => setNewDescription(value)}
               onSubmitEditing={Keyboard.dismiss}
             />
-            <Button onPress={onPressButton}>
-              <ButtonText>{isEditingMode ? 'Edit Task' : 'Add Task'}</ButtonText>
+            <Button onPress={editTaskButton}>
+              <ButtonText>Edit Task</ButtonText>
+            </Button>
+            <Button onPress={removeTaskButton}>
+              <ButtonText>Remove Task</ButtonText>
             </Button>
           </InputContainer>
         </KeyboardAvoiding>
@@ -133,4 +87,9 @@ const List = () => {
   );
 };
 
-export default List;
+const mapStateToProps = (state) => {
+  const { tasks, selectedTask } = state.task
+  return { tasks, selectedTask }
+};
+
+export default connect(mapStateToProps)(EditTask);
