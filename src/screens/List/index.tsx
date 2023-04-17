@@ -1,5 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import { useIsFocused } from '@react-navigation/native';
 import {
   Platform,
 } from 'react-native';
@@ -17,6 +18,8 @@ import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../constants/theme'
 
 const List = ({ navigation, tasks }) => {
+  const isFocused = useIsFocused();
+
   const renderEmptyComponent = () => (
     <ViewContainer>
       <EmptyText>Empty List...</EmptyText>
@@ -35,6 +38,7 @@ const List = ({ navigation, tasks }) => {
             renderItem={({item}) => <Card card={item} navigation={navigation} />}
             keyExtractor={(i, index) => index.toString()}
             ListEmptyComponent={renderEmptyComponent}
+            refreshing={isFocused}
           />
         </KeyboardAvoiding>
       </Wrapper>

@@ -20,7 +20,6 @@ const Card = ({card, navigation}) => {
   const dispatch = useDispatch();
   const theme = useTheme()
 	const {id, title, description, status, uri} = card;
-  const [isDone, setIsDone] = useState(status);
   
   const onPressButton = () => {
     dispatch(selectTask(id));

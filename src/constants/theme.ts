@@ -17,4 +17,4 @@ const myTheme = {
     },
 };
 
-export {myTheme};
+export { myTheme };
