@@ -24,7 +24,23 @@ import Reducer from './src/redux/reducer'
 const ListIcon = require('./src/assets/icons/list.svg').default;
 const PlusIcon = require('./src/assets/icons/plus.svg').default;
 
-const store = createStore(Reducer);
+// -------- REACT PERSIST --------
+
+import { persistReducer, persistStore } from 'redux-persist';
+import AsyncStorage from '@react-native-community/async-storage';
+
+const persistConfig = {
+  key: 'root',
+  storage: AsyncStorage,
+};
+
+const persistedReducer = persistReducer(persistConfig, Reducer);
+
+export const store = createStore(persistedReducer);
+export const persistor = persistStore(store);
+
+// -------------------------------
+
 
 const App = () => {
   const Tab = createBottomTabNavigator<TabParamsList>();
