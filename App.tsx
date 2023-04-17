@@ -47,16 +47,29 @@ const App = () => {
     <Provider store={store}>
       <ThemeProvider theme={myTheme}>
         <NavigationContainer>
-        <Tab.Navigator screenOptions={{ headerShown: false }}>
+        <Tab.Navigator screenOptions={{
+            headerShown: false,
+            tabBarStyle: {
+              backgroundColor: myTheme.colors.darkBlue,
+              borderTopWidth: 0,
+            },
+            tabBarLabelStyle: {
+              fontSize: 13,
+              fontFamily: 'Lato-Italic'
+            }
+          }}
+        >
           <Tab.Screen
-            name={Routes.List}
+            name={Routes.Home}
             component={ListStackScreen}
-            options={{ tabBarIcon: ({ focused }) => <ListIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
+            options={{
+              tabBarIcon: ({ focused }) => <ListIcon stroke={focused ? '#2564c0' : 'grey'}/>,
+            }}
           />
           <Tab.Screen
             name={Routes.AddTask}
             component={AddTask}
-            options={{ tabBarIcon: ({ focused }) => <PlusIcon stroke={focused ? 'grey' : 'lightgray'}/>}}
+            options={{ tabBarIcon: ({ focused }) => <PlusIcon stroke={focused ? '#2564c0' : 'grey'}/>}}
           />
         </Tab.Navigator>
         </NavigationContainer>

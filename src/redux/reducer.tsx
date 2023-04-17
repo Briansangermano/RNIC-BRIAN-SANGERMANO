@@ -40,7 +40,7 @@ const taskReducer = (state = INITIAL_STATE, action) => {
           ...state,
           tasks,
         }
-      }
+      };
       case 'SELECT_TASK': {
         const { tasks } = state;
         const taskSelected = tasks.find(task => task.id === action.payload);
@@ -48,7 +48,7 @@ const taskReducer = (state = INITIAL_STATE, action) => {
           ...state,
           selectedTask: taskSelected,
         }
-      }
+      };
       case 'EDIT_TASK': {
         const { tasks } = state;
         const taskEdited = tasks.map(task => {
@@ -62,7 +62,7 @@ const taskReducer = (state = INITIAL_STATE, action) => {
           ...state,
           tasks: taskEdited,
         }
-      }
+      };
       case 'REMOVE_TASK': {
         const { tasks } = state;
         const taskDeleted = tasks.filter(task => task.id !== action.payload);
@@ -70,9 +70,20 @@ const taskReducer = (state = INITIAL_STATE, action) => {
           ...state,
           tasks: taskDeleted,
         }
-      }
+      };
+      case 'CHECK_TASK': {
+        const { tasks } = state;
+        const taskChecked = tasks.map(task => {
+          if(task.id === action.payload){task.status = !task.status;}
+          return task;
+        });
+        return {
+          ...state,
+          tasks: taskChecked,
+        }
+      };
       default:
-        return state
+        return state;
     }
   };
 

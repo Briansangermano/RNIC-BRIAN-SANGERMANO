@@ -4,6 +4,7 @@ import {
   Keyboard,
   Platform,
   TextInput,
+  TouchableOpacity,
 } from 'react-native';
 import {
   Wrapper,
@@ -14,10 +15,16 @@ import {
   Input,
   Button,
   ButtonText,
+  ContainerButtons,
 } from './styles';
-import { removeTask, editTask } from '../../redux/actions';
+import { removeTask, editTask, checkTask } from '../../redux/actions';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../constants/theme'
+const BackArrow = require('../../assets/icons/arrowLeft.svg').default;
+const EditIcon = require('../../assets/icons/edit.svg').default;
+const TrashIcon = require('../../assets/icons/trash.svg').default;
+const CheckIcon = require('../../assets/icons/check-square.svg').default;
+const SquareIcon = require('../../assets/icons/square.svg').default;
 
 const EditTask = ({ selectedTask, navigation }) => {
   const titleRef = useRef<TextInput | null>(null);
@@ -36,6 +43,11 @@ const EditTask = ({ selectedTask, navigation }) => {
     };
   }, []);
 
+  const checkTaskButton = () => {
+    dispatch(checkTask(selectedTask.id));
+    navigation.canGoBack() && navigation.goBack();
+  };
+
   const editTaskButton = () => {
     if (newTitle && newDescription) {
       dispatch(editTask({id: selectedTask.id, title: newTitle, description: newDescription}));
@@ -43,18 +55,21 @@ const EditTask = ({ selectedTask, navigation }) => {
       setNewDescription('');
       navigation.canGoBack() && navigation.goBack();
     }
-  }
+  };
 
   const removeTaskButton = () => {
     dispatch(removeTask(selectedTask.id));
     navigation.canGoBack() && navigation.goBack();
-  }
+  };
 
   return (
     <ThemeProvider theme={myTheme}>
       <Wrapper>
         <KeyboardAvoiding behavior={Platform.OS  === 'ios' ? 'padding' : 'undefined'}>
           <HeaderContainer>
+            <TouchableOpacity onPress={()=> navigation.canGoBack() && navigation.goBack()}>
+              <BackArrow stroke={'#fff'} />
+            </TouchableOpacity>
             <HeaderText>Edit Task</HeaderText>
           </HeaderContainer>
           <InputContainer>
@@ -74,12 +89,21 @@ const EditTask = ({ selectedTask, navigation }) => {
               onChangeText={(value) => setNewDescription(value)}
               onSubmitEditing={Keyboard.dismiss}
             />
-            <Button onPress={editTaskButton}>
-              <ButtonText>Edit Task</ButtonText>
-            </Button>
-            <Button onPress={removeTaskButton}>
-              <ButtonText>Remove Task</ButtonText>
-            </Button>
+            <ContainerButtons>
+              <Button onPress={checkTaskButton}>
+                {selectedTask.status ? (
+                  <SquareIcon stroke={myTheme.colors.white} />
+                  ) : (
+                  <CheckIcon stroke={myTheme.colors.white} />
+                )}
+              </Button>
+              <Button onPress={editTaskButton}>
+                <EditIcon stroke={'#fff'} />
+              </Button>
+              <Button onPress={removeTaskButton}>
+                <TrashIcon stroke={'#fff'} />
+              </Button>
+            </ContainerButtons>
           </InputContainer>
         </KeyboardAvoiding>
       </Wrapper>

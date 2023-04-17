@@ -18,6 +18,7 @@ import {
 import { addTask } from '../../redux/actions';
 import { ThemeProvider } from 'styled-components';
 import { myTheme } from '../../constants/theme'
+const PlusIcon = require('../../assets/icons/plus.svg').default;
 
 const AddTask = ({ navigation, tasks }) => {
   const titleRef = useRef<TextInput | null>(null)
@@ -78,6 +79,7 @@ const AddTask = ({ navigation, tasks }) => {
             />
             <Button onPress={onPressButton}>
               <ButtonText>Add Task</ButtonText>
+              <PlusIcon stroke={myTheme.colors.white}/>
             </Button>
           </InputContainer>
         </KeyboardAvoiding>

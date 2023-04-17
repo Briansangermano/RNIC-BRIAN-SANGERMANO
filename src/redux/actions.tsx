@@ -18,9 +18,15 @@ const editTask = (data) => ({
   payload: data,
 });
 
+const checkTask = (taskId) => ({
+  type: 'CHECK_TASK',
+  payload: taskId,
+});
+
 export {
   addTask,
   selectTask,
   removeTask,
   editTask,
+  checkTask,
 }

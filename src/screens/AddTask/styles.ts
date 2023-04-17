@@ -12,8 +12,7 @@ export const KeyboardAvoiding = styled.KeyboardAvoidingView`
 export const InputContainer = styled.View`
     flex: 1;
     align-items: center;
-    justify-content: center;
-    padding-top: 25px;
+    margin-top: 125px;
 `;
 
 export const HeaderContainer = styled.View`

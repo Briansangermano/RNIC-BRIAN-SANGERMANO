@@ -10,6 +10,7 @@ import {
   Image,
 } from './styles';
 import { selectTask } from '../../redux/actions';
+import { Routes } from '../../types/enums/routes';
 import { useTheme } from 'styled-components'
 const SquareIcon = require('../../assets/icons/square.svg').default;
 const CheckSquareIcon = require('../../assets/icons/check-square.svg').default;
@@ -23,7 +24,7 @@ const Card = ({card, navigation}) => {
   
   const onPressButton = () => {
     dispatch(selectTask(id));
-    navigation.navigate('EditTask')
+    navigation.navigate(Routes.EditTask)
   };
 
   return (
@@ -35,7 +36,7 @@ const Card = ({card, navigation}) => {
             <SimpleText numberOfLines={3}>{description}</SimpleText>
           </TextContainer>
           <StatusView>
-            {isDone ? (
+            {status ? (
               <CheckSquareIcon stroke={theme.colors.green} />
             ) : (
               <SquareIcon stroke={theme.colors.red} />
