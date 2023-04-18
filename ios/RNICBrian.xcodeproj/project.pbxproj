@@ -8,12 +8,24 @@
 
 /* Begin PBXBuildFile section */
 		00E356F31AD99517003FC87E /* RNICBrianTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 00E356F21AD99517003FC87E /* RNICBrianTests.m */; };
-		0C80B921A6F3F58F76C31292 /* libPods-RNICBrian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 5DCACB8F33CDC322A6C60F78 /* libPods-RNICBrian.a */; };
+		0A6F0DF6AF3443DBBC435ED5 /* Lato-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D90534BC18AE43B18876628A /* Lato-Light.ttf */; };
 		13B07FBC1A68108700A75B9A /* AppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB01A68108700A75B9A /* AppDelegate.mm */; };
 		13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 13B07FB51A68108700A75B9A /* Images.xcassets */; };
 		13B07FC11A68108700A75B9A /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 13B07FB71A68108700A75B9A /* main.m */; };
-		7699B88040F8A987B510C191 /* libPods-RNICBrian-RNICBrianTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNICBrian-RNICBrianTests.a */; };
+		1AEE08EA330744769348DE38 /* Lato-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D6F3B7EBADB64455BE6F2C1F /* Lato-Italic.ttf */; };
+		1E6E53E9AEA7467CB257D6B5 /* Lato-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1655FF1DBE6744DD9E4D36E7 /* Lato-ThinItalic.ttf */; };
+		3AD0752ECD0248DA91648ADA /* Lato-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = D42F2276BC134C27B7A4B563 /* Lato-BoldItalic.ttf */; };
+		6B0A774F0B1F85AE2E33FAD1 /* libPods-RNICBrian-RNICBrianTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = B987BFD81A8F958805AEF45A /* libPods-RNICBrian-RNICBrianTests.a */; };
+		6BEBC4BCF1B74BF6807C379B /* Lato-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 3BD29C2008664162A199281F /* Lato-Bold.ttf */; };
+		786CAA344F2242FDAE612A97 /* Lato-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = CAB341ED8FD64C1EA250E4DD /* Lato-LightItalic.ttf */; };
+		7C692A9012004998938FB25B /* Alkatra-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 41388573E3F8424294438A2C /* Alkatra-VariableFont_wght.ttf */; };
 		81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */; };
+		A859105AA33017F2B2B6B1C8 /* libPods-RNICBrian.a in Frameworks */ = {isa = PBXBuildFile; fileRef = FFB96E488C16C32113715E95 /* libPods-RNICBrian.a */; };
+		B113C21F74564A50A6C11F48 /* Lato-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 0F1077EE2B724904AE799D28 /* Lato-Thin.ttf */; };
+		C2C87C0929DDEC1400BE381A /* BootSplash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C2C87C0829DDEC1400BE381A /* BootSplash.storyboard */; };
+		CE21C0BDD4164F7B9C329ED3 /* Lato-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 8F6E05D1C4A44935A4A3B8A6 /* Lato-Regular.ttf */; };
+		D8CC20E76A59488F899463CD /* Lato-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 7536A8285B8C49F089C38EE5 /* Lato-Black.ttf */; };
+		D9EAAA2BB8B94B63A91186DE /* Lato-BlackItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 15BA792E96E741C9922DF24B /* Lato-BlackItalic.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -30,20 +42,32 @@
 		00E356EE1AD99517003FC87E /* RNICBrianTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RNICBrianTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		00E356F11AD99517003FC87E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00E356F21AD99517003FC87E /* RNICBrianTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RNICBrianTests.m; sourceTree = "<group>"; };
+		0F1077EE2B724904AE799D28 /* Lato-Thin.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Thin.ttf"; path = "../src/assets/fonts/Lato-Thin.ttf"; sourceTree = "<group>"; };
 		13B07F961A680F5B00A75B9A /* RNICBrian.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RNICBrian.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		13B07FAF1A68108700A75B9A /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = AppDelegate.h; path = RNICBrian/AppDelegate.h; sourceTree = "<group>"; };
 		13B07FB01A68108700A75B9A /* AppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = AppDelegate.mm; path = RNICBrian/AppDelegate.mm; sourceTree = "<group>"; };
 		13B07FB51A68108700A75B9A /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Images.xcassets; path = RNICBrian/Images.xcassets; sourceTree = "<group>"; };
 		13B07FB61A68108700A75B9A /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Info.plist; path = RNICBrian/Info.plist; sourceTree = "<group>"; };
 		13B07FB71A68108700A75B9A /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = main.m; path = RNICBrian/main.m; sourceTree = "<group>"; };
-		19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNICBrian-RNICBrianTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNICBrian-RNICBrianTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
-		3B4392A12AC88292D35C810B /* Pods-RNICBrian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian.debug.xcconfig"; path = "Target Support Files/Pods-RNICBrian/Pods-RNICBrian.debug.xcconfig"; sourceTree = "<group>"; };
-		5709B34CF0A7D63546082F79 /* Pods-RNICBrian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian.release.xcconfig"; path = "Target Support Files/Pods-RNICBrian/Pods-RNICBrian.release.xcconfig"; sourceTree = "<group>"; };
-		5B7EB9410499542E8C5724F5 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian-RNICBrianTests.debug.xcconfig"; path = "Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests.debug.xcconfig"; sourceTree = "<group>"; };
-		5DCACB8F33CDC322A6C60F78 /* libPods-RNICBrian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNICBrian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		15BA792E96E741C9922DF24B /* Lato-BlackItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BlackItalic.ttf"; path = "../src/assets/fonts/Lato-BlackItalic.ttf"; sourceTree = "<group>"; };
+		1655FF1DBE6744DD9E4D36E7 /* Lato-ThinItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-ThinItalic.ttf"; path = "../src/assets/fonts/Lato-ThinItalic.ttf"; sourceTree = "<group>"; };
+		211399E4DF514EFE9D933BC2 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian-RNICBrianTests.debug.xcconfig"; path = "Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests.debug.xcconfig"; sourceTree = "<group>"; };
+		37B551EA3798D5322AD86E81 /* Pods-RNICBrian.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian.debug.xcconfig"; path = "Target Support Files/Pods-RNICBrian/Pods-RNICBrian.debug.xcconfig"; sourceTree = "<group>"; };
+		3BD29C2008664162A199281F /* Lato-Bold.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Bold.ttf"; path = "../src/assets/fonts/Lato-Bold.ttf"; sourceTree = "<group>"; };
+		41388573E3F8424294438A2C /* Alkatra-VariableFont_wght.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Alkatra-VariableFont_wght.ttf"; path = "../src/assets/fonts/Alkatra-VariableFont_wght.ttf"; sourceTree = "<group>"; };
+		7536A8285B8C49F089C38EE5 /* Lato-Black.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Black.ttf"; path = "../src/assets/fonts/Lato-Black.ttf"; sourceTree = "<group>"; };
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = RNICBrian/LaunchScreen.storyboard; sourceTree = "<group>"; };
-		89C6BE57DB24E9ADA2F236DE /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian-RNICBrianTests.release.xcconfig"; path = "Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests.release.xcconfig"; sourceTree = "<group>"; };
+		8F6E05D1C4A44935A4A3B8A6 /* Lato-Regular.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Regular.ttf"; path = "../src/assets/fonts/Lato-Regular.ttf"; sourceTree = "<group>"; };
+		B0E3C72BCBE43F2D2B423EA6 /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian-RNICBrianTests.release.xcconfig"; path = "Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests.release.xcconfig"; sourceTree = "<group>"; };
+		B987BFD81A8F958805AEF45A /* libPods-RNICBrian-RNICBrianTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNICBrian-RNICBrianTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C2C87C0829DDEC1400BE381A /* BootSplash.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = BootSplash.storyboard; path = RNICBrian/BootSplash.storyboard; sourceTree = "<group>"; };
+		CAB341ED8FD64C1EA250E4DD /* Lato-LightItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-LightItalic.ttf"; path = "../src/assets/fonts/Lato-LightItalic.ttf"; sourceTree = "<group>"; };
+		D42F2276BC134C27B7A4B563 /* Lato-BoldItalic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-BoldItalic.ttf"; path = "../src/assets/fonts/Lato-BoldItalic.ttf"; sourceTree = "<group>"; };
+		D6F3B7EBADB64455BE6F2C1F /* Lato-Italic.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Italic.ttf"; path = "../src/assets/fonts/Lato-Italic.ttf"; sourceTree = "<group>"; };
+		D90534BC18AE43B18876628A /* Lato-Light.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = "Lato-Light.ttf"; path = "../src/assets/fonts/Lato-Light.ttf"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
+		F37E1F1EDD993CAB888AE1C9 /* Pods-RNICBrian.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-RNICBrian.release.xcconfig"; path = "Target Support Files/Pods-RNICBrian/Pods-RNICBrian.release.xcconfig"; sourceTree = "<group>"; };
+		FFB96E488C16C32113715E95 /* libPods-RNICBrian.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-RNICBrian.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,7 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7699B88040F8A987B510C191 /* libPods-RNICBrian-RNICBrianTests.a in Frameworks */,
+				6B0A774F0B1F85AE2E33FAD1 /* libPods-RNICBrian-RNICBrianTests.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,7 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0C80B921A6F3F58F76C31292 /* libPods-RNICBrian.a in Frameworks */,
+				A859105AA33017F2B2B6B1C8 /* libPods-RNICBrian.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +112,7 @@
 			children = (
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
 				13B07FB01A68108700A75B9A /* AppDelegate.mm */,
+				C2C87C0829DDEC1400BE381A /* BootSplash.storyboard */,
 				13B07FB51A68108700A75B9A /* Images.xcassets */,
 				13B07FB61A68108700A75B9A /* Info.plist */,
 				81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */,
@@ -100,10 +125,28 @@
 			isa = PBXGroup;
 			children = (
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
-				5DCACB8F33CDC322A6C60F78 /* libPods-RNICBrian.a */,
-				19F6CBCC0A4E27FBF8BF4A61 /* libPods-RNICBrian-RNICBrianTests.a */,
+				FFB96E488C16C32113715E95 /* libPods-RNICBrian.a */,
+				B987BFD81A8F958805AEF45A /* libPods-RNICBrian-RNICBrianTests.a */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		46BB28A85E3B4DE0B52DECC4 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				41388573E3F8424294438A2C /* Alkatra-VariableFont_wght.ttf */,
+				7536A8285B8C49F089C38EE5 /* Lato-Black.ttf */,
+				15BA792E96E741C9922DF24B /* Lato-BlackItalic.ttf */,
+				3BD29C2008664162A199281F /* Lato-Bold.ttf */,
+				D42F2276BC134C27B7A4B563 /* Lato-BoldItalic.ttf */,
+				D6F3B7EBADB64455BE6F2C1F /* Lato-Italic.ttf */,
+				D90534BC18AE43B18876628A /* Lato-Light.ttf */,
+				CAB341ED8FD64C1EA250E4DD /* Lato-LightItalic.ttf */,
+				8F6E05D1C4A44935A4A3B8A6 /* Lato-Regular.ttf */,
+				0F1077EE2B724904AE799D28 /* Lato-Thin.ttf */,
+				1655FF1DBE6744DD9E4D36E7 /* Lato-ThinItalic.ttf */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
@@ -122,6 +165,7 @@
 				83CBBA001A601CBA00E9B192 /* Products */,
 				2D16E6871FA4F8E400B85C8A /* Frameworks */,
 				BBD78D7AC51CEA395F1C20DB /* Pods */,
+				46BB28A85E3B4DE0B52DECC4 /* Resources */,
 			);
 			indentWidth = 2;
 			sourceTree = "<group>";
@@ -140,10 +184,10 @@
 		BBD78D7AC51CEA395F1C20DB /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				3B4392A12AC88292D35C810B /* Pods-RNICBrian.debug.xcconfig */,
-				5709B34CF0A7D63546082F79 /* Pods-RNICBrian.release.xcconfig */,
-				5B7EB9410499542E8C5724F5 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */,
-				89C6BE57DB24E9ADA2F236DE /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */,
+				37B551EA3798D5322AD86E81 /* Pods-RNICBrian.debug.xcconfig */,
+				F37E1F1EDD993CAB888AE1C9 /* Pods-RNICBrian.release.xcconfig */,
+				211399E4DF514EFE9D933BC2 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */,
+				B0E3C72BCBE43F2D2B423EA6 /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -155,12 +199,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 00E357021AD99517003FC87E /* Build configuration list for PBXNativeTarget "RNICBrianTests" */;
 			buildPhases = (
-				A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */,
+				089DE1AAA4C85CC696771557 /* [CP] Check Pods Manifest.lock */,
 				00E356EA1AD99517003FC87E /* Sources */,
 				00E356EB1AD99517003FC87E /* Frameworks */,
 				00E356EC1AD99517003FC87E /* Resources */,
-				C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */,
-				F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */,
+				51C14806F9A20C881E64FE92 /* [CP] Embed Pods Frameworks */,
+				69757C9F97EEA631CB155B58 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -176,14 +220,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 13B07F931A680F5B00A75B9A /* Build configuration list for PBXNativeTarget "RNICBrian" */;
 			buildPhases = (
-				C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */,
+				FEA76CC49F2DB5DC4A6D9BED /* [CP] Check Pods Manifest.lock */,
 				FD10A7F022414F080027D42C /* Start Packager */,
 				13B07F871A680F5B00A75B9A /* Sources */,
 				13B07F8C1A680F5B00A75B9A /* Frameworks */,
 				13B07F8E1A680F5B00A75B9A /* Resources */,
 				00DD1BFF1BD5951E006B06BC /* Bundle React Native code and images */,
-				00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */,
-				E235C05ADACE081382539298 /* [CP] Copy Pods Resources */,
+				3B0F1E3FA1978F38F19C3429 /* [CP] Embed Pods Frameworks */,
+				42FFA01E78BC7DD6AEC304D4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -242,8 +286,20 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C2C87C0929DDEC1400BE381A /* BootSplash.storyboard in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
+				7C692A9012004998938FB25B /* Alkatra-VariableFont_wght.ttf in Resources */,
+				D8CC20E76A59488F899463CD /* Lato-Black.ttf in Resources */,
+				D9EAAA2BB8B94B63A91186DE /* Lato-BlackItalic.ttf in Resources */,
+				6BEBC4BCF1B74BF6807C379B /* Lato-Bold.ttf in Resources */,
+				3AD0752ECD0248DA91648ADA /* Lato-BoldItalic.ttf in Resources */,
+				1AEE08EA330744769348DE38 /* Lato-Italic.ttf in Resources */,
+				0A6F0DF6AF3443DBBC435ED5 /* Lato-Light.ttf in Resources */,
+				786CAA344F2242FDAE612A97 /* Lato-LightItalic.ttf in Resources */,
+				CE21C0BDD4164F7B9C329ED3 /* Lato-Regular.ttf in Resources */,
+				B113C21F74564A50A6C11F48 /* Lato-Thin.ttf in Resources */,
+				1E6E53E9AEA7467CB257D6B5 /* Lato-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -264,24 +320,7 @@
 			shellPath = /bin/sh;
 			shellScript = "set -e\n\nexport NODE_BINARY=node\n../node_modules/react-native/scripts/react-native-xcode.sh\n";
 		};
-		00EEFC60759A1932668264C0 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		A55EABD7B0C7F3A422A6CC61 /* [CP] Check Pods Manifest.lock */ = {
+		089DE1AAA4C85CC696771557 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -303,46 +342,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		C38B50BA6285516D6DCD4F65 /* [CP] Check Pods Manifest.lock */ = {
+		3B0F1E3FA1978F38F19C3429 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-RNICBrian-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		C59DA0FBD6956966B86A3779 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E235C05ADACE081382539298 /* [CP] Copy Pods Resources */ = {
+		42FFA01E78BC7DD6AEC304D4 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -359,7 +376,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNICBrian/Pods-RNICBrian-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F6A41C54EA430FDDC6A6ED99 /* [CP] Copy Pods Resources */ = {
+		51C14806F9A20C881E64FE92 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-RNICBrian-RNICBrianTests/Pods-RNICBrian-RNICBrianTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		69757C9F97EEA631CB155B58 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -395,6 +429,28 @@
 			shellScript = "export RCT_METRO_PORT=\"${RCT_METRO_PORT:=8081}\"\necho \"export RCT_METRO_PORT=${RCT_METRO_PORT}\" > \"${SRCROOT}/../node_modules/react-native/scripts/.packager.env\"\nif [ -z \"${RCT_NO_LAUNCH_PACKAGER+xxx}\" ] ; then\n  if nc -w 5 -z localhost ${RCT_METRO_PORT} ; then\n    if ! curl -s \"http://localhost:${RCT_METRO_PORT}/status\" | grep -q \"packager-status:running\" ; then\n      echo \"Port ${RCT_METRO_PORT} already in use, packager is either not running or not running correctly\"\n      exit 2\n    fi\n  else\n    open \"$SRCROOT/../node_modules/react-native/scripts/launchPackager.command\" || echo \"Can't start packager automatically\"\n  fi\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		FEA76CC49F2DB5DC4A6D9BED /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-RNICBrian-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -428,7 +484,7 @@
 /* Begin XCBuildConfiguration section */
 		00E356F61AD99517003FC87E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5B7EB9410499542E8C5724F5 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */;
+			baseConfigurationReference = 211399E4DF514EFE9D933BC2 /* Pods-RNICBrian-RNICBrianTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				GCC_PREPROCESSOR_DEFINITIONS = (
@@ -455,7 +511,7 @@
 		};
 		00E356F71AD99517003FC87E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 89C6BE57DB24E9ADA2F236DE /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */;
+			baseConfigurationReference = B0E3C72BCBE43F2D2B423EA6 /* Pods-RNICBrian-RNICBrianTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				COPY_PHASE_STRIP = NO;
@@ -479,7 +535,7 @@
 		};
 		13B07F941A680F5B00A75B9A /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 3B4392A12AC88292D35C810B /* Pods-RNICBrian.debug.xcconfig */;
+			baseConfigurationReference = 37B551EA3798D5322AD86E81 /* Pods-RNICBrian.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -505,7 +561,7 @@
 		};
 		13B07F951A680F5B00A75B9A /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5709B34CF0A7D63546082F79 /* Pods-RNICBrian.release.xcconfig */;
+			baseConfigurationReference = F37E1F1EDD993CAB888AE1C9 /* Pods-RNICBrian.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -576,7 +632,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
@@ -640,7 +696,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
 				LD_RUNPATH_SEARCH_PATHS = (
 					/usr/lib/swift,
 					"$(inherited)",
